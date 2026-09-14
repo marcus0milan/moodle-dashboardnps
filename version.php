@@ -18,8 +18,8 @@ defined('MOODLE_INTERNAL') || die();
 
 $plugin = new stdClass();
 $plugin->component = 'local_feedbackdashboard';
-$plugin->version   = 2026082609;
-$plugin->requires  = 2024042200;
-$plugin->supported = [404, 405];
+$plugin->version   = 2026091400;
+$plugin->requires  = 2022041905;
+$plugin->supported = [400];
 $plugin->maturity  = MATURITY_BETA;
 $plugin->release   = '1.1.4-beta';
