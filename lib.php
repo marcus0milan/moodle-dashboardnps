@@ -20,3 +20,7 @@
  */
 
 defined('MOODLE_INTERNAL') || die();
+
+function local_feedbackdashboard_extend_navigation(global_navigation $navigation): void {
+    \local_feedbackdashboard\local\hook_callbacks::add_activity_header_action();
+}
