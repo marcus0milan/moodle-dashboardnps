@@ -33,7 +33,6 @@ class hook_callbacks {
      * @return void
      */
     public static function add_activity_header_action(
-        \core\hook\output\before_standard_head_html_generation $hook
     ): void {
         global $OUTPUT, $PAGE, $SCRIPT;
 
