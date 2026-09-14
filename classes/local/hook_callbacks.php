@@ -19,17 +19,15 @@ defined('MOODLE_INTERNAL') || die();
 class hook_callbacks {
 
     /**
-     * Adds a native Dashboard NPS action to the header of Feedback pages.
+    * Adds a native Dashboard NPS action to the header of Feedback pages.
      *
      * The action is available throughout the current Feedback activity
      * (Pesquisa, Configurações, Modelos, Análise and Respostas), but only
      * to users authorised to view reports and this plugin's dashboard.
      *
-     * Using moodle_page::add_header_action() is more reliable across Moodle
-     * 4.4/4.5 themes than attempting to inject a local-plugin node into the
-     * activity's secondary navigation or its overflow "More" menu.
+    * moodle_page::add_header_action() is available in Moodle 4.0.5 and is
+    * called by the legacy local-plugin navigation callback before output.
      *
-     * @param \core\hook\output\before_standard_head_html_generation $hook
      * @return void
      */
     public static function add_activity_header_action(

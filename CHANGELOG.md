@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.5-beta - 2026-09-14
+
+- Ajusta a documentação e a integração de navegação para Moodle 4.0.5.
+- Remove a dependência declarativa da Hooks API, que não é necessária nesta versão.
+- Mantém o botão do dashboard no cabeçalho através do callback local compatível.
+
 ## 1.1.4-beta - 2026-08-19
 
 - Mantém acesso completo do arquétipo **Gerente** a todas as funções próprias do plugin.

@@ -4,17 +4,19 @@ Local Moodle plugin for generating NPS indicators from the native **Feedback** a
 
 ## Requirements
 
-- Moodle 4.4 or 4.5;
-- PHP version compatible with the installed Moodle version;
+- Moodle 4.0.5 or later within the Moodle 4.x series;
+- PHP 7.4.33 or a PHP version supported by the installed Moodle version;
 - native **Feedback** activity enabled.
 
 ## Compatibility
 
-- Moodle 4.4.x (including 4.4.2);
-- Moodle 4.5.x;
-- PHP version compatible with the installed Moodle version.
+- Moodle 4.0.5;
+- Moodle 4.4.x and 4.5.x;
+- PHP 7.4.33 is supported for Moodle 4.0.5.
 
-The plugin uses APIs available in both versions, including the hook system introduced prior to Moodle 4.4.
+The plugin uses APIs available in Moodle 4.0.5, including the legacy local-plugin
+navigation callback and the core PDF library. It does not require Moodle's newer
+Hooks API.
 
 ## Installation
 
