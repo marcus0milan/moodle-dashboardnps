@@ -131,7 +131,7 @@ class nps_service {
 
         $scores = array_values(array_filter(
             $config['scores'],
-            static fn($value) => $value !== null
+            static function($value) { return $value !== null; }
         ));
         $scores = array_values(array_unique(array_map('intval', $scores)));
         sort($scores);
