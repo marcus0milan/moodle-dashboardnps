@@ -20,6 +20,6 @@ $plugin = new stdClass();
 $plugin->component = 'local_feedbackdashboard';
 $plugin->version   = 2026091400;
 $plugin->requires  = 2022041905;
-$plugin->supported = [400];
+$plugin->supported = [400, 400];
 $plugin->maturity  = MATURITY_BETA;
 $plugin->release   = '1.1.4-beta';
