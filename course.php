@@ -1178,13 +1178,18 @@ echo html_writer::tag(
     ]
 );
 
+$exporturlparams = [
+    'id' => $courseid,
+];
+
+foreach ($selectedactivityids as $index => $selectedactivityid) {
+    $exporturlparams['activities[' . $index . ']'] = $selectedactivityid;
+}
+
 echo html_writer::link(
     new moodle_url(
         '/local/feedbackdashboard/download_course_excel.php',
-        [
-            'id' => $courseid,
-            'activities' => $selectedactivityids,
-        ]
+        $exporturlparams
     ),
     $OUTPUT->pix_icon('t/download', '')
         . ' '
