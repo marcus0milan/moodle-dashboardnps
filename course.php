@@ -1178,6 +1178,23 @@ echo html_writer::tag(
     ]
 );
 
+echo html_writer::link(
+    new moodle_url(
+        '/local/feedbackdashboard/download_course_excel.php',
+        [
+            'id' => $courseid,
+            'activities' => $selectedactivityids,
+        ]
+    ),
+    $OUTPUT->pix_icon('t/download', '')
+        . ' '
+        . get_string('downloadcourseexcel', 'local_feedbackdashboard'),
+    [
+        'class' => 'btn btn-outline-primary',
+        'title' => get_string('downloadcourseexcel', 'local_feedbackdashboard'),
+    ]
+);
+
 if (!empty($selectedactivityids)) {
     echo html_writer::link(
         new moodle_url(
