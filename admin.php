@@ -366,6 +366,37 @@ $actions .= html_writer::link(
     ]
 );
 
+/*
+ * Baixar relatório consolidado do curso em Excel.
+ */
+$courseexcelurl = new moodle_url(
+    '/local/feedbackdashboard/download_course_excel.php',
+    [
+        'id' => $coursedata['id'],
+    ]
+);
+
+$excelbuttoncontent =
+    $OUTPUT->pix_icon('t/download', '')
+    . ' '
+    . get_string(
+        'downloadcourseexcel',
+        'local_feedbackdashboard'
+    );
+
+$actions .= html_writer::link(
+    $courseexcelurl,
+    $excelbuttoncontent,
+    [
+        'class' => 'btn btn-sm btn-outline-primary',
+        'style' => 'width:170px; min-height:38px; display:inline-flex; align-items:center; justify-content:center; gap:.35rem;',
+        'title' => get_string(
+            'downloadcourseexcel',
+            'local_feedbackdashboard'
+        ),
+    ]
+);
+
 $actions .= html_writer::end_div();
 
     /*
