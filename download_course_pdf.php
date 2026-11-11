@@ -1417,7 +1417,7 @@ require_capability(
 
 $PAGE->set_url(
     new moodle_url(
-        '/local/feedbackdashboard/download_course.php',
+        '/local/feedbackdashboard/download_course_pdf.php',
         [
             'id' => $course->id,
         ]

@@ -317,7 +317,7 @@ $courseurl = new moodle_url(
 );
 
 $coursepdfurl = new moodle_url(
-    '/local/feedbackdashboard/download_course.php',
+    '/local/feedbackdashboard/download_course_pdf.php',
     [
         'id' => $coursedata['id'],
     ]
