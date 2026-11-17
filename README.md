@@ -1,67 +1,69 @@
-# NPS Dashboard for Moodle Feedback
+# Dashboard NPS para o Feedback do Moodle
 
-A local Moodle plugin that generates NPS reports from responses collected through the native **Feedback** activity (`mod_feedback`).
+Um plugin local do Moodle que gera relatórios de NPS a partir das respostas coletadas pela atividade nativa **Feedback** (`mod_feedback`).
 
-## Requirements
+## Requisitos
 
-- Moodle 4.4.x or 4.5.x;
-- Compatible PHP version;
-- Native Feedback activity enabled.
+- Moodle 4.4.x ou 4.5.x;
+- Versão do PHP compatível;
+- Atividade nativa Feedback habilitada.
 
-## Installation
+## Instalação
 
-1. Place the plugin in the following directory:
+1. Coloque o plugin no seguinte diretório:
 
    ```text
    local/feedbackdashboard
    ```
 
-2. If installing via ZIP, make sure the archive contains the `feedbackdashboard/` folder at its root.
-3. Go to **Site administration → Notifications** and complete the installation.
+2. Se instalar por meio de um arquivo ZIP, certifique-se de que o arquivo contenha a pasta `feedbackdashboard/` na raiz.
+3. Acesse **Administração do site → Notificações** e conclua a instalação.
 
-## Access
+## Acesso
 
-The dashboard is available in two ways:
+O dashboard pode ser acessado de duas formas:
 
-**Feedback Activity**
+**Dentro da atividade Feedback**
 
-Users with the required permission can access the dashboard through the **Open NPS Dashboard** button in the activity header. It is available on all Feedback pages, including Feedback, Settings, Templates, Analysis, and Responses.
+Usuários com a permissão necessária podem acessar o dashboard pelo botão **Abrir Dashboard NPS**, localizado na área de ações do cabeçalho da atividade.
 
-**Site-wide Dashboard**
+O botão está disponível em todas as páginas da atividade Feedback, incluindo Feedback, Configurações, Modelos, Análise e Respostas.
 
-Administrators and managers can access the central dashboard through:
+**Dashboard geral do site**
+
+Administradores e gerentes podem acessar o dashboard central por meio do caminho:
 
 ```text
-Site administration → Reports → NPS Dashboard
+Administração do site → Relatórios → Dashboard NPS
 ```
 
-It provides an overview of all Feedback activities, including response counts, NPS scores, promoters, passives, detractors, and links to detailed reports.
+Ele apresenta uma visão geral de todas as atividades Feedback, incluindo quantidade de respostas, pontuações NPS, promotores, passivos, detratores e links para relatórios detalhados.
 
-## Permissions
+## Permissões
 
-The plugin defines two capabilities:
+O plugin define duas permissões:
 
-- `local/feedbackdashboard:view`: access reports for individual Feedback activities;
-- `local/feedbackdashboard:viewall`: access the site-wide dashboard.
+- `local/feedbackdashboard:view`: permite acessar os relatórios de atividades Feedback individuais;
+- `local/feedbackdashboard:viewall`: permite acessar o dashboard geral do site.
 
-By default, both capabilities are granted to the **Manager** role archetype. Administrators have full access.
+Por padrão, ambas as permissões são concedidas ao arquétipo de função **Gerente**. Administradores possuem acesso completo.
 
-To allow editing teachers to view reports, grant the appropriate capability through the role permissions settings.
+Para permitir que professores com permissão de edição visualizem os relatórios, conceda a capacidade apropriada nas configurações de permissões da função.
 
-## NPS Calculation
+## Cálculo do NPS
 
-The plugin automatically identifies the first single-choice question containing the complete **0–10** scale.
+O plugin identifica automaticamente a primeira questão de escolha única que contém a escala completa de **0 a 10**.
 
-Responses are classified as follows:
+As respostas são classificadas da seguinte forma:
 
-- **9–10:** Promoters
-- **7–8:** Passives
-- **0–6:** Detractors
+- **9–10:** Promotores
+- **7–8:** Passivos
+- **0–6:** Detratores
 
-The NPS score is calculated based on the percentage of promoters minus the percentage of detractors.
+A pontuação NPS é calculada com base na porcentagem de promotores menos a porcentagem de detratores.
 
-## Privacy
+## Privacidade
 
-The plugin does not create additional database tables or store personal data.
+O plugin não cria tabelas adicionais no banco de dados nem armazena dados pessoais.
 
-It reads existing responses from Moodle Feedback and displays the results only to users with the required permissions.
+Ele consulta as respostas já armazenadas no Feedback do Moodle e apresenta os resultados apenas aos usuários que
