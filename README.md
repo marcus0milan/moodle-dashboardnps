@@ -1,70 +1,67 @@
 # NPS Dashboard for Moodle Feedback
 
-Local Moodle plugin for generating NPS indicators from the native **Feedback** activity (`mod_feedback`).
+A local Moodle plugin that generates NPS reports from responses collected through the native **Feedback** activity (`mod_feedback`).
 
 ## Requirements
 
-- Moodle 4.4 or 4.5;
-- PHP version compatible with the installed Moodle version;
-- native **Feedback** activity enabled.
-
-## Compatibility
-
-- Moodle 4.4.x (including 4.4.2);
-- Moodle 4.5.x;
-- PHP version compatible with the installed Moodle version.
-
-The plugin uses APIs available in both versions, including the hook system introduced prior to Moodle 4.4.
+- Moodle 4.4.x or 4.5.x;
+- Compatible PHP version;
+- Native Feedback activity enabled.
 
 ## Installation
 
-The plugin directory must be exactly:
+1. Place the plugin in the following directory:
 
-```text
-local/feedbackdashboard
-```
+   ```text
+   local/feedbackdashboard
+   ```
 
-When installing through the administration interface, upload the ZIP file containing the root folder `feedbackdashboard/`.
-Then navigate to **Site administration → Notifications** and complete the upgrade process.
+2. If installing via ZIP, make sure the archive contains the `feedbackdashboard/` folder at its root.
+3. Go to **Site administration → Notifications** and complete the installation.
 
-## Available Access Points
+## Access
 
-### Within a Feedback Activity
+The dashboard is available in two ways:
 
-Authorized users can access the **Open NPS Dashboard** button in the activity header actions area.
-The access option is available across the native Feedback pages
-(Feedback, Settings, Templates, Analysis, and Responses), without relying on the **More** menu.
+**Feedback Activity**
 
-### Site-wide Dashboard
+Users with the required permission can access the dashboard through the **Open NPS Dashboard** button in the activity header. It is available on all Feedback pages, including Feedback, Settings, Templates, Analysis, and Responses.
 
-Administrators and managers can access the dashboard at:
+**Site-wide Dashboard**
+
+Administrators and managers can access the central dashboard through:
 
 ```text
 Site administration → Reports → NPS Dashboard
 ```
 
-The central dashboard compares Feedback activities across the site, displaying the number of responses,
-NPS score, promoters, passives, detractors, and shortcuts to the detailed report.
+It provides an overview of all Feedback activities, including response counts, NPS scores, promoters, passives, detractors, and links to detailed reports.
 
 ## Permissions
 
-- `local/feedbackdashboard:view`: view the dashboard for a Feedback activity;
-- `local/feedbackdashboard:viewall`: view the site-wide dashboard.
+The plugin defines two capabilities:
 
-By default, these capabilities are granted to the **Manager** role archetype. Administrators
-have all permissions. If editing teachers should also have access to the reports,
-grant the capability manually in the role definition.
+- `local/feedbackdashboard:view`: access reports for individual Feedback activities;
+- `local/feedbackdashboard:viewall`: access the site-wide dashboard.
 
-## NPS Identification Rule
+By default, both capabilities are granted to the **Manager** role archetype. Administrators have full access.
 
-The plugin identifies the first single-choice question that represents the complete
-**0 to 10** scale. Scores are classified as follows:
+To allow editing teachers to view reports, grant the appropriate capability through the role permissions settings.
 
-- 9–10: promoters;
-- 7–8: passives;
-- 0–6: detractors.
+## NPS Calculation
+
+The plugin automatically identifies the first single-choice question containing the complete **0–10** scale.
+
+Responses are classified as follows:
+
+- **9–10:** Promoters
+- **7–8:** Passives
+- **0–6:** Detractors
+
+The NPS score is calculated based on the percentage of promoters minus the percentage of detractors.
 
 ## Privacy
 
-The plugin does not create database tables or store its own personal data. It reads the responses
-already stored in Moodle Feedback and presents them only to authorized users.
+The plugin does not create additional database tables or store personal data.
+
+It reads existing responses from Moodle Feedback and displays the results only to users with the required permissions.
